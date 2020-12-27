@@ -30,31 +30,7 @@ environment = ExtResource( 2 )
 near = 0.1
 far = 7000.0
 
-[node name="SpotLight" type="SpotLight" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.2, -0.5 )
-visible = false
-light_energy = 0.25
-spot_range = 8.0
-spot_attenuation = 4.0
-spot_angle = 19.0
-spot_angle_attenuation = 1.07177
-
 [node name="RayCast" type="RayCast" parent="Head"]
 enabled = true
 cast_to = Vector3( 0, -1000, 0 )
 collide_with_areas = true
-
-[node name="OmniLight" type="OmniLight" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64, 0 )
-visible = false
-light_color = Color( 0.611765, 0.819608, 1, 1 )
-light_energy = 0.02
-omni_range = 20.0
-omni_attenuation = 3.03143
-
-[node name="OmniLight2" type="OmniLight" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -6 )
-visible = false
-light_color = Color( 0.768627, 0.576471, 0.172549, 1 )
-omni_range = 4.0
-omni_attenuation = 3.03143

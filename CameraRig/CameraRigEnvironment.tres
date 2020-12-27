@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=5 format=2]
+[gd_resource type="Environment" load_steps=3 format=2]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.208738, 0.742574, 1 )
@@ -7,27 +7,19 @@ colors = PoolColorArray( 0, 0, 0, 1, 0.158254, 0.186737, 0.199219, 1, 0.731145, 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[sub_resource type="StreamTexture" id=3]
-flags = 19
-
-[sub_resource type="PanoramaSky" id=4]
-radiance_size = 0
-panorama = SubResource( 3 )
-
 [resource]
-background_sky = SubResource( 4 )
 background_color = Color( 1, 0, 0, 1 )
 background_energy = 0.0
-ambient_light_color = Color( 0.2, 0.596078, 0.94902, 1 )
-ambient_light_energy = 0.2
+ambient_light_color = Color( 0.258824, 0.45098, 0.592157, 1 )
+ambient_light_energy = 0.1
 ambient_light_sky_contribution = 0.0
 fog_enabled = true
-fog_color = Color( 0.733333, 0.733333, 0.733333, 1 )
-fog_sun_color = Color( 1, 0.721569, 0.466667, 1 )
+fog_color = Color( 0.458824, 0.411765, 0.384314, 1 )
+fog_sun_color = Color( 1, 0.647059, 0.32549, 1 )
 fog_sun_amount = 1.0
 fog_depth_begin = 0.0
-fog_depth_end = 109.2
-fog_depth_curve = 0.905437
+fog_depth_end = 1061.6
+fog_depth_curve = 0.659755
 fog_transmit_curve = 1.86607
 fog_height_enabled = true
 fog_height_min = -10.0
@@ -65,5 +57,6 @@ glow_hdr_threshold = 0.15
 glow_hdr_luminance_cap = 49.18
 glow_hdr_scale = 2.18
 adjustment_enabled = true
+adjustment_contrast = 0.92
 adjustment_saturation = 0.76
 adjustment_color_correction = SubResource( 2 )

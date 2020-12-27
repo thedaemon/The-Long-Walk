@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://CameraRig/CameraRigEnvironment.tres" type="Environment" id=1]
+
+[node name="Cameras" type="Spatial"]
+
+[node name="Camera1" type="Camera" parent="."]
+transform = Transform( -0.00767943, -0.439299, 0.898308, 0, 0.898335, 0.439312, -0.999971, 0.00337367, -0.0068987, 394.52, 106.44, 33.04 )
+environment = ExtResource( 1 )
+fov = 40.8
+near = 0.02
+far = 5000.0
+
+[node name="Camera2" type="Camera" parent="."]
+transform = Transform( -0.00767943, -0.0714953, 0.997411, 0, 0.997441, 0.0714974, -0.999971, 0.00054906, -0.00765978, 489.7, 7.16, -117.76 )
+environment = ExtResource( 1 )
+fov = 44.3
+near = 0.02
+far = 5000.0
+
+[node name="Camera3" type="Camera" parent="."]
+transform = Transform( -0.00767943, -0.0781088, 0.996915, 0, 0.996945, 0.0781111, -0.999971, 0.000599849, -0.00765597, 294.44, 4.74, -239.6 )
+environment = ExtResource( 1 )
+fov = 44.3
+near = 0.02
+far = 5000.0
+
+[node name="Camera4" type="Camera" parent="."]
+transform = Transform( -0.985348, -0.0121941, 0.170117, 0, 0.997441, 0.0714975, -0.170553, 0.0704499, -0.982827, -7, 36.64, -355.5 )
+environment = ExtResource( 1 )
+fov = 44.3
+near = 0.02
+far = 5000.0
+
+[node name="Camera5" type="Camera" parent="."]
+transform = Transform( -0.212256, -0.674155, 0.707433, -0.0371835, 0.728976, 0.683529, -0.976507, 0.118778, -0.179797, -13.78, 147.2, -264.8 )
+environment = ExtResource( 1 )
+projection = 1
+fov = 44.3
+size = 234.39
+near = 0.02
+far = 5000.0
+
+[node name="Camera6" type="Camera" parent="."]
+transform = Transform( 0.480652, -0.298098, 0.824689, -0.0474489, 0.930228, 0.363902, -0.875627, -0.21404, 0.432971, -24.62, 91.34, -152.06 )
+environment = ExtResource( 1 )
+projection = 1
+fov = 44.3
+size = 187.71
+near = 0.01
+far = 8192.0
+
+[node name="Camera7" type="Camera" parent="."]
+transform = Transform( 0.602098, -0.223603, 0.766472, 0.0313661, 0.965867, 0.257133, -0.797806, -0.130778, 0.58856, -47.06, 75.82, -73.94 )
+environment = ExtResource( 1 )
+projection = 1
+fov = 44.3
+size = 141.03
+near = 0.01
+far = 8192.0
+
+[node name="Camera8" type="Camera" parent="."]
+transform = Transform( -0.779386, 0.0716983, -0.622428, 0.0323678, 0.996712, 0.0742825, 0.625708, 0.0377482, -0.779144, -47.06, 36.08, -73.94 )
+environment = ExtResource( 1 )
+projection = 1
+fov = 44.3
+size = 47.67
+near = 0.01
+far = 884.0
+
+[node name="Camera9" type="Camera" parent="."]
+transform = Transform( 0.90206, 0.00166043, 0.431608, 0.0323743, 0.996915, -0.0714975, -0.430395, 0.078468, 0.899223, 104.48, 18.04, 235.2 )
+environment = ExtResource( 1 )
+fov = 32.6
+size = 47.67
+near = 0.01
+far = 8192.0
+
+[node name="Camera10" type="Camera" parent="."]
+transform = Transform( 0.492363, 0.0463454, 0.869155, 0.0323744, 0.996915, -0.0714974, -0.869787, 0.063341, 0.489344, 254.74, 19.2, 478.14 )
+environment = ExtResource( 1 )
+fov = 32.6
+size = 47.67
+near = 0.01
+far = 8192.0

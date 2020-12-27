@@ -11,6 +11,7 @@ var zoommode = 1
 var jump_height = 20
 var gravity = -29.8
 
+# Flying Constants
 const FLY_SPEED = 10
 const FLY_ACCEL = 1
 
@@ -32,6 +33,7 @@ func _physics_process(delta):
 			fly(delta)
 		1:
 			walk(delta)
+
 
 
 func _input(event):
