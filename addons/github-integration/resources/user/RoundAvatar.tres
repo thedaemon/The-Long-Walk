@@ -45,7 +45,6 @@ void light() {
 
 }
 "
-custom_defines = ""
 graph_offset = Vector2( -350, 121 )
 mode = 1
 flags/light_only = false

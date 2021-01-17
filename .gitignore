@@ -1,4 +1,8 @@
-# Build
-# Ignored locally because there are other folders in which we want to version OBJ files
-*.obj
 
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+addons/github-integration
+# Mono-specific ignores
+.mono/

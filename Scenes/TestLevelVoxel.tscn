@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://PlayerController/PlayerController.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/TestLevel1.gd" type="Script" id=3]
+[ext_resource path="res://Environment/Environment.tscn" type="PackedScene" id=4]
+
+[sub_resource type="OpenSimplexNoise" id=2]
+seed = 666
+octaves = 9
+period = 73.1
+lacunarity = 0.89
+
+[sub_resource type="VoxelGeneratorNoise2D" id=3]
+noise = SubResource( 2 )
+
+[sub_resource type="VoxelMesherTransvoxel" id=4]
+
+[sub_resource type="OpenSimplexNoise" id=5]
+seed = 666
+octaves = 7
+period = 30.4
+persistence = 0.378
+lacunarity = 0.26
+
+[sub_resource type="NoiseTexture" id=6]
+width = 2048
+height = 2048
+seamless = true
+noise = SubResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.854902, 0.682353, 0.160784, 1 )
+albedo_texture = SubResource( 6 )
+metallic = 0.28
+roughness = 0.79
+
+[node name="TestLevel1" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Environment" parent="." instance=ExtResource( 4 )]
+transform = Transform( 5000, 0, 0, 0, 3000, 0, 0, 0, 5000, 0, 0, 0 )
+
+[node name="CameraRig" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6586, 85.8988, -26.3698 )
+
+[node name="VoxelViewer" type="VoxelViewer" parent="CameraRig"]
+
+[node name="VoxelLodTerrain" type="VoxelLodTerrain" parent="."]
+stream = SubResource( 3 )
+mesher = SubResource( 4 )
+view_distance = 1024
+material = SubResource( 9 )

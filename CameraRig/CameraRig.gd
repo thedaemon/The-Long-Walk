@@ -1,20 +1,21 @@
 extends KinematicBody
 
-var camera_angle = 0
-var mouse_sensitivity = 0.1
+######-Variables-##############################################################
 
+# Camera
+var camera_angle = 0
+export var mouse_sensitivity = 0.1
+# Movement
 var velocity = Vector3()
 var direction = Vector3()
-
-var playerMode = 0
+var playerFlyMode = 0
 var zoommode = 1
+var crouchmode = 1
 var jump_height = 20
 var gravity = -29.8
-
 # Flying Constants
 const FLY_SPEED = 10
 const FLY_ACCEL = 1
-
 const MAX_SPEED = 10
 const MAX_RUNNING_SPEED = 20
 const ACCEL = 10
@@ -23,12 +24,12 @@ const DEACCEL = 10
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	playerMode = 1
+	playerFlyMode = 1
 	pass
 
 
 func _physics_process(delta):
-	match playerMode:
+	match playerFlyMode:
 		0:
 			fly(delta)
 		1:
@@ -46,7 +47,7 @@ func _input(event):
 				camera_angle += change
 	
 	if Input.is_action_pressed("switch"):
-		playerMode = int(not bool(playerMode))
+		playerFlyMode = int(not bool(playerFlyMode))
 	if Input.is_action_pressed("exit"):
 		# Loads the Main Menu if the ESC key is pressed
 		get_tree().change_scene("res://Scenes/menu.tscn")
@@ -55,12 +56,11 @@ func _input(event):
 		$Head/Camera.fov = 20 if zoommode == 1 else 70
 		mouse_sensitivity = 0.05 if zoommode == 1 else 0.2
 		zoommode = int(not bool(zoommode))
-
-
+		
 # Walking and Sprinting
 func walk(delta):
 	direction = get_direction()
-	
+	# Apply Gravity
 	velocity.y += gravity * delta
 	
 	var temp_velocity = velocity 
@@ -73,15 +73,14 @@ func walk(delta):
 		speed = MAX_SPEED
 	
 	var target = direction * speed
-	
+	# interpolation
 	temp_velocity = temp_velocity.linear_interpolate(target, ACCEL * delta)
-	
 	velocity.x = temp_velocity.x
 	velocity.z = temp_velocity.z
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_height
-	
+	# Move
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
 
 
@@ -100,8 +99,8 @@ func fly(delta):
 
 
 func get_direction():
-	direction = Vector3()
-	
+	# Input
+	direction = Vector3()	
 	var aim = $Head/Camera.get_global_transform().basis
 	
 	if Input.is_action_pressed("move_forward"):
